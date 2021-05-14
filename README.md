@@ -8,8 +8,6 @@ The extension will also inform the user about working days (and hours) this mont
 
 When calculation difference extension will automatically deduce any vacation (or medical checkup) days, so the difference will be calculated on working days only.
 
-When the calculation is triggered it will always include today (if a working day) so the real balance will be available only when working hours for today are entered.
-
 The Extension for now only works for employees which work only on weekdays (it ignores weekends).
 
 The installation process is described below.

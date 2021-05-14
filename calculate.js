@@ -38,6 +38,7 @@ function calculateHours() {
   const MEDICAL_CHECKUP_ICON = '#fab-medical-clipboard-11x14'
 
   const infoIconQuery = '.TimesheetSlat__extraInfoItem svg use'
+  const timeInputQuery = 'input.TimesheetSlat__input'
 
   monthNoWeekendRows.forEach(element => {
     const vacationIcon = element.querySelector(infoIconQuery)
@@ -54,9 +55,22 @@ function calculateHours() {
       medicalCheckup.push(element)
     } else {
       const isFutureDay = element.getAttribute('class').includes('TimesheetSlat--future')
+      const isToday = element.getAttribute('class').includes('TimesheetSlat--today')
 
       if (isFutureDay) {
         futureDays.push(element)
+      } else if (isToday) {
+        const inputElement = element.querySelector(timeInputQuery)
+
+        if (inputElement) {
+          const value = inputElement.getAttribute('value')
+
+          if (value) {
+            workDays.push(element)
+          } else {
+            futureDays.push(element)
+          }
+        }
       } else {
         workDays.push(element)
       }
@@ -64,8 +78,6 @@ function calculateHours() {
   })
 
   let hoursWorked = 0
-
-  const timeInputQuery = 'input.TimesheetSlat__input'
 
   workDays.forEach(element => {
     const inputElement = element.querySelector(timeInputQuery)
