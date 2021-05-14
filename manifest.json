@@ -1,0 +1,25 @@
+{
+  "name": "BambooHR",
+  "description": "Extend BambooHR UI",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/bamboo16.png",
+      "32": "/images/bamboo32.png",
+      "48": "/images/bamboo48.png",
+      "128": "/images/bamboo128.png"
+    }
+  },
+  "icons": {
+    "16": "/images/bamboo16.png",
+    "32": "/images/bamboo32.png",
+    "48": "/images/bamboo48.png",
+    "128": "/images/bamboo128.png"
+  }
+}
