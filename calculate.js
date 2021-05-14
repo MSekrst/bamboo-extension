@@ -31,15 +31,18 @@ function calculateHours() {
   const futureDays = [] // future work days
   const vacationDays = [] // vacation days used or scheduled
   const holidays = [] // holidays
+  const medicalCheckup = [] // medical checkup
 
   const VACATION_ICON = '#fab-calendar-clock-14x14'
   const HOLIDAY_ICON = '#fab-fireworks-16x16'
+  const MEDICAL_CHECKUP_ICON = '#fab-medical-clipboard-11x14'
 
   const infoIconQuery = '.TimesheetSlat__extraInfoItem svg use'
 
   monthNoWeekendRows.forEach(element => {
     const vacationIcon = element.querySelector(infoIconQuery)
     const holidayIcon = element.querySelector(infoIconQuery)
+    const medicalIcon = element.querySelector(infoIconQuery)
 
     const iconAttributeName = 'xlink:href'
 
@@ -47,6 +50,8 @@ function calculateHours() {
       holidays.push(element)
     } else if (vacationIcon && vacationIcon.getAttribute(iconAttributeName) === VACATION_ICON) {
       vacationDays.push(element)
+    } else if (medicalIcon && medicalIcon.getAttribute(iconAttributeName) === MEDICAL_CHECKUP_ICON) {
+      medicalCheckup.push(element)
     } else {
       const isFutureDay = element.getAttribute('class').includes('TimesheetSlat--future')
 
@@ -102,7 +107,7 @@ function calculateHours() {
     }
   })
 
-  const monthWorkDays = workDays.length + futureDays.length + vacationDays.length
+  const monthWorkDays = workDays.length + futureDays.length + vacationDays.length + medicalCheckup.length
   const monthWorkHours = monthWorkDays * 8
   const availableHours = workDays.length * 8
 
