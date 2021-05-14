@@ -28,6 +28,8 @@ Unpack the downloaded ZIP file somewhere in the file system (remember the locati
 
 2. Enable Developer Mode (in the top right corner).
 
+<img width="1678" src="https://user-images.githubusercontent.com/16863956/118276356-db8eea00-b4c7-11eb-87b6-87f1b0dcab9a.png">
+
 3. Drag the `bamboohr-extension-master` folder you have downloaded, anywhere on the page to import it (do not delete the folder afterward).
 
 ## 4. Usage
@@ -36,5 +38,11 @@ Unpack the downloaded ZIP file somewhere in the file system (remember the locati
 
 2. Open the extension menu by clicking on the extension icon (Bamboo icon)
 
+<img width="352" alt="2" src="https://user-images.githubusercontent.com/16863956/118276631-2c064780-b4c8-11eb-925a-afd4db341824.png">
+
 3. Click the `Calculate` button and the results will be shown in the sidebar of a Timesheet page.
+
+<img width="1015" alt="3" src="https://user-images.githubusercontent.com/16863956/118276789-52c47e00-b4c8-11eb-9984-25a351bd367a.png">
+
+
 
